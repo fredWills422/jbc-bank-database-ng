@@ -7,11 +7,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AccountListComponent } from './feature/account-list/account-list.component';
+import { AccountDetailComponent } from './feature/account-detail/account-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccountListComponent
+    AccountListComponent,
+    AccountDetailComponent
   ],
   imports: [
     BrowserModule,
