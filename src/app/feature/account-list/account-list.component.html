@@ -13,6 +13,8 @@
             <th>BirthDate</th>
             <th>Balance</th>
             <th>Fees</th>
+
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +24,12 @@
             <td>{{account.birthdate}}</td>
             <td>{{account.balance}}</td>
             <td>{{account.fees}}</td>
+
+            <td>
+                <a routerLink='/actor/detail/{{account.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
+                | 
+               <a routerLink='/actor/edit/{{account.id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+            </td>
         </tr>
     </tbody>
 </table>
