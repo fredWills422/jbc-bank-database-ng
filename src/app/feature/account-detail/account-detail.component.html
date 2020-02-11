@@ -1,1 +1,36 @@
 <p>account-detail works!</p>
+<!-- <app-menu></app-menu> -->
+<div class="component" *ngIf="account">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span> | <a routerLink="/account/list">Return to list...</a></span>
+    </section>
+    <main class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>Id:</td>
+                <td>{{account.id}}</td>
+            </tr>
+            <tr>
+                <td>AccountHolder:</td>
+                <td><input [(ngModel)]="account.accountHolder" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Birthdate:</td>
+                <td><input [(ngModel)]="account.birthdate" class="rounded" type="text" disabled></td>
+            </tr>
+            <tr>
+                <td>Balance:</td>
+                <td><input [(ngModel)]="account.balance" class="rounded" type="number" disabled></td>
+            </tr>
+            <tr>
+                <td>Fees:</td>
+                <td><input [(ngModel)]="account.fees" class="rounded" type="number" disabled></td>
+            </tr>
+        </table>
+    </main>
+    <span >
+        <span><a routerLink="/account/edit/{{account.id}}" class="btn btn-sm btn-warning">Edit</a></span>
+        <span> | <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
+    </span>
+</div>

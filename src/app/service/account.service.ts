@@ -16,4 +16,20 @@ export class AccountService {
     return this.http.get(url) as Observable<JsonResponse>
   }
 
+  create(account: Account): Observable<JsonResponse>{
+    return this.http.post(url, account) as Observable<JsonResponse>;
+  }
+
+  get(id:number): Observable<JsonResponse>{
+    return this.http.get(url+id) as Observable<JsonResponse>;
+  }
+
+  edit(account: Account): Observable<JsonResponse>{
+    return this.http.put(url,account) as Observable<JsonResponse>;
+  }
+
+  delete(id:number): Observable<JsonResponse>{
+    return this.http.delete(url+id) as Observable<JsonResponse>;
+  }
+
 }
