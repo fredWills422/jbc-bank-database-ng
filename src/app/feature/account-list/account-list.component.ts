@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Account } from 'src/app/model/account.class'
+import { AccountService } from 'src/app/service/account.service';
 
 @Component({
   selector: 'app-account-list',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountListComponent implements OnInit {
 
-  constructor() { }
+  accounts: Account[];
+  title: string = 'Account-list'
+
+  constructor(private accountSvc: AccountService) { }
 
   ngOnInit() {
+    //populate accounts
+    this.accountSvc.list().subscribe(
+      jr => {
+        this.accounts = jr.data as Account[];
+        console.log(this.accounts); 
+      }
+    );
   }
 
 }
